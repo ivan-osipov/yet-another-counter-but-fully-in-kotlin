@@ -34,7 +34,8 @@ kotlin {
         browser {
             runTask {
                 compilation.kotlinOptions {
-                    outputFile = "$buildDir/processedResources/Js/main/app.js"
+                    outputFileName = "app.js"
+                    destinationDirectory = File("$buildDir/processedResources/Js/main")
                 }
             }
         }
