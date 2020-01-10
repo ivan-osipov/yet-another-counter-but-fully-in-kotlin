@@ -1,0 +1,11 @@
+package io.gettis.yetanothercounter
+
+import io.gettis.yetanothercounter.component.App
+import react.dom.render
+import kotlin.browser.document
+
+fun main() {
+    render(document.getElementById("root")) {
+        child(App::class) {}
+    }
+}
