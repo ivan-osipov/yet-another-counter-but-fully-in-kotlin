@@ -21,14 +21,6 @@ kotlin {
                 implementation("org.jetbrains:kotlin-css-js:1.0.0-pre.89-kotlin-1.3.60")
                 implementation("org.jetbrains:kotlin-styled:1.0.0-pre.89-kotlin-1.3.60")
 
-                implementation(npm("kotlinx-html", "0.6.12"))
-                implementation(npm("@jetbrains/kotlin-react", "16.9.0-pre.89"))
-                implementation(npm("@jetbrains/kotlin-react-dom", "16.9.0-pre.89"))
-                implementation(npm("@jetbrains/kotlin-css", "1.0.0-pre.89"))
-                implementation(npm("@jetbrains/kotlin-css-js", "1.0.0-pre.89"))
-                implementation(npm("@jetbrains/kotlin-styled", "1.0.0-pre.89"))
-                implementation(npm("@jetbrains/kotlin-extensions", "1.0.1-pre.89"))
-
                 implementation(npm("react", "16.9.0"))
                 implementation(npm("react-dom", "16.9.0"))
                 implementation(npm("styled-components", "4"))
@@ -39,6 +31,13 @@ kotlin {
     }
     target {
         useCommonJs()
-        browser()
+        browser {
+            runTask {
+                compilation.kotlinOptions {
+                    outputFile = "$buildDir/processedResources/Js/main/app.js"
+                }
+            }
+        }
+
     }
 }
