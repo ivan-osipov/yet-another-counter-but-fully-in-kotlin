@@ -31,14 +31,6 @@ kotlin {
     }
     target {
         useCommonJs()
-        browser {
-            runTask {
-                compilation.kotlinOptions {
-                    outputFileName = "app.js"
-                    destinationDirectory = File("$buildDir/processedResources/Js/main")
-                }
-            }
-        }
-
+        browser()
     }
 }
